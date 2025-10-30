@@ -1,0 +1,423 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisi Commit Django - Report</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-card h3 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .stat-card p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .image-container {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        
+        .image-container h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 20px;
+            border-left: 4px solid #ffc107;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .highlight h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .images-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎓 Analisi Commit Django</h1>
+            <p>Automated Software Delivery - Università del Molise</p>
+            <p>Marco Machera</p>
+            <p>Ottobre 2025</p>
+        </div>
+        
+        <div class="content">
+            <!-- Domanda di Ricerca -->
+            <div class="section">
+                <h2>🎯 Domanda di Ricerca</h2>
+                <div class="highlight">
+                    <h3>Quanti commit hanno migliorato lo stile del codice o hanno effettuato operazioni di refactoring?</h3>
+                </div>
+            </div>
+            
+            <!-- Risultati Principali -->
+            <div class="section">
+                <h2>📊 Risultati Principali</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>33,567</h3>
+                        <p>Commit Totali Analizzati</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>2,115</h3>
+                        <p>Commit Refactoring/Stile</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>6.30%</h3>
+                        <p>Percentuale Refactoring</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Insight Chiave -->
+            <div class="section">
+                <h2>💡 Insight Chiave</h2>
+                <ul style="font-size: 1.1em; line-height: 2;">
+                    <li>✅ <strong>Circa 1 commit su 16</strong> è dedicato al refactoring o allo stile</li>
+                    <li>✅ <strong>Django dimostra un forte impegno</strong> per la qualità del codice</li>
+                    <li>✅ <strong>Il refactoring è una pratica costante</strong>, non sporadica</li>
+                    <li>✅ <strong>Solo il 15.2% degli autori</strong> contribuisce al refactoring</li>
+                    <li>✅ <strong>I messaggi di refactoring</strong> sono più concisi (-12.5 caratteri in media)</li>
+                </ul>
+            </div>
+            
+            <!-- Top Contributori -->
+            <div class="section">
+                <h2>👥 Top 10 Contributori al Refactoring</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Posizione</th>
+                            <th>Autore</th>
+                            <th>Commit Refactoring</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>🥇 1</td>
+                            <td>Adrian Holovaty</td>
+                            <td>263</td>
+                        </tr>
+                        <tr>
+                            <td>🥈 2</td>
+                            <td>Tim Graham</td>
+                            <td>198</td>
+                        </tr>
+                        <tr>
+                            <td>🥉 3</td>
+                            <td>Russell Keith-Magee</td>
+                            <td>150</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Malcolm Tredinnick</td>
+                            <td>141</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Mariusz Felisiak</td>
+                            <td>75</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Aymeric Augustin</td>
+                            <td>66</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Gary Wilson Jr</td>
+                            <td>62</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Alex Gaynor</td>
+                            <td>56</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Jannis Leidel</td>
+                            <td>48</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>James Bennett</td>
+                            <td>43</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Grafici -->
+            <div class="section">
+                <h2>📈 Visualizzazioni</h2>
+                <div class="images-grid">
+                    <div class="image-container">
+                        <h3>Distribuzione Commit</h3>
+                        <img src="grafico_commit.png" alt="Grafico distribuzione commit">
+                    </div>
+                    <div class="image-container">
+                        <h3>Analisi Temporale</h3>
+                        <img src="analisi_temporale.png" alt="Analisi temporale">
+                    </div>
+                    <div class="image-container">
+                        <h3>Top Autori</h3>
+                        <img src="top_autori_refactoring.png" alt="Top autori">
+                    </div>
+                    <div class="image-container">
+                        <h3>Frequenza Parole Chiave</h3>
+                        <img src="parole_chiave_frequenza.png" alt="Parole chiave">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Parole Chiave -->
+            <div class="section">
+                <h2>🔤 Parole Chiave Più Frequenti</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Parola Chiave</th>
+                            <th>Occorrenze</th>
+                            <th>Descrizione</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>typo</strong></td>
+                            <td>1,326</td>
+                            <td>Correzione errori di battitura</td>
+                        </tr>
+                        <tr>
+                            <td><strong>formatting</strong></td>
+                            <td>196</td>
+                            <td>Miglioramenti formattazione</td>
+                        </tr>
+                        <tr>
+                            <td><strong>style</strong></td>
+                            <td>173</td>
+                            <td>Miglioramenti stile codice</td>
+                        </tr>
+                        <tr>
+                            <td><strong>cleanup</strong></td>
+                            <td>94</td>
+                            <td>Pulizia codice</td>
+                        </tr>
+                        <tr>
+                            <td><strong>whitespace</strong></td>
+                            <td>71</td>
+                            <td>Correzioni spazi bianchi</td>
+                        </tr>
+                        <tr>
+                            <td><strong>cosmetic</strong></td>
+                            <td>50</td>
+                            <td>Modifiche estetiche</td>
+                        </tr>
+                        <tr>
+                            <td><strong>pep8</strong></td>
+                            <td>40</td>
+                            <td>Conformità PEP 8</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Metodologia -->
+            <div class="section">
+                <h2>🛠️ Metodologia</h2>
+                <ol style="font-size: 1.1em; line-height: 2;">
+                    <li><strong>Estrazione dati:</strong> Utilizzo di <code>git log</code> per estrarre tutti i commit</li>
+                    <li><strong>Preprocessing:</strong> Caricamento e pulizia dei dati con pandas</li>
+                    <li><strong>Classificazione:</strong> Pattern matching con regex su 20+ parole chiave</li>
+                    <li><strong>Analisi:</strong> Calcolo di statistiche aggregate e comparative</li>
+                    <li><strong>Visualizzazione:</strong> Generazione di grafici professionali con matplotlib</li>
+                    <li><strong>Validazione:</strong> Verifica manuale di campioni rappresentativi</li>
+                </ol>
+            </div>
+            
+            <!-- Conclusioni -->
+            <div class="section">
+                <h2>🎓 Conclusioni</h2>
+                <div class="highlight">
+                    <h3>Il 6.30% dei commit di Django (2,115 su 33,567) sono dedicati al refactoring o al miglioramento dello stile del codice.</h3>
+                    <p style="margin-top: 10px;">
+                        Questo dimostra che Django mantiene un focus costante sulla qualità del codice,
+                        con il refactoring integrato come pratica standard nel processo di sviluppo.
+                        Questo approccio contribuisce alla sostenibilità e longevità del progetto.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Tecnologie -->
+            <div class="section">
+                <h2>💻 Tecnologie Utilizzate</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                    <div style="background: #f8f9fa; padding: 15px; border-radius: 5px; text-align: center;">
+                        <strong>Python 3.13</strong>
+                        <p style="font-size: 0.9em; color: #666;">Linguaggio principale</p>
+                    </div>
+                    <div style="background: #f8f9fa; padding: 15px; border-radius: 5px; text-align: center;">
+                        <strong>pandas 2.x</strong>
+                        <p style="font-size: 0.9em; color: #666;">Analisi dati</p>
+                    </div>
+                    <div style="background: #f8f9fa; padding: 15px; border-radius: 5px; text-align: center;">
+                        <strong>matplotlib 3.x</strong>
+                        <p style="font-size: 0.9em; color: #666;">Visualizzazione</p>
+                    </div>
+                    <div style="background: #f8f9fa; padding: 15px; border-radius: 5px; text-align: center;">
+                        <strong>Git</strong>
+                        <p style="font-size: 0.9em; color: #666;">Estrazione dati</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>Marco Machera</strong></p>
+            <p>Automated Software Delivery - Università del Molise</p>
+            <p>Prof. Simone Scalabrino</p>
+            <p>Generato il 30/10/2025 alle 15:50</p>
+        </div>
+    </div>
+</body>
+</html>

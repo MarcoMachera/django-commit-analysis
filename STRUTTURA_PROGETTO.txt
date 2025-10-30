@@ -1,0 +1,148 @@
+📁 STRUTTURA PROGETTO - ANALISI COMMIT DJANGO
+==============================================
+
+Automated Software Delivery - Università del Molise
+Prof. Simone Scalabrino | Marco Machera | Ottobre 2025
+
+┌─────────────────────────────────────────────────────────────┐
+│                    FILE PRINCIPALI                          │
+└─────────────────────────────────────────────────────────────┘
+
+📊 DATI DI INPUT
+----------------
+commits.csv                    (5.3 MB)  - Dataset completo 33,567 commit
+└── Colonne: hash, autore, data, messaggio
+
+🐍 SCRIPT PYTHON
+----------------
+analisi_commit.py             (9.9 KB)  - ⭐ SCRIPT PRINCIPALE
+├── Carica commits.csv
+├── Identifica commit di refactoring/stile
+├── Calcola statistiche
+├── Genera grafico_commit.png
+└── Esporta commit_refactoring.csv
+
+analisi_avanzate.py           (6.7 KB)  - Analisi approfondite
+├── Analisi temporale (2005-2025)
+├── Top 10 autori di refactoring
+├── Frequenza parole chiave
+├── Statistiche comparative
+└── Genera 3 grafici aggiuntivi
+
+📈 OUTPUT - GRAFICI
+-------------------
+grafico_commit.png            (267 KB)  - Torta + barre (principale)
+analisi_temporale.png         (120 KB)  - Evoluzione nel tempo
+top_autori_refactoring.png    (157 KB)  - Top 10 contributori
+parole_chiave_frequenza.png   (169 KB)  - Frequenza keywords
+
+📄 OUTPUT - DATI
+----------------
+commit_refactoring.csv        (323 KB)  - 2,115 commit identificati
+└── Colonne: hash, autore, data, messaggio, è_refactoring
+
+🌐 OUTPUT - WEB
+---------------
+report_analisi.html           (15 KB)   - Report interattivo completo
+├── Statistiche principali
+├── Top contributori
+├── Tutti i grafici inclusi
+└── Metodologia e conclusioni
+
+📚 DOCUMENTAZIONE
+-----------------
+README.md                     (5.8 KB)  - Documentazione completa
+├── Obiettivi del progetto
+├── Metodologia dettagliata
+├── Risultati e interpretazioni
+└── Installazione e utilizzo
+
+RIEPILOGO.md                  (6.4 KB)  - Sintesi risultati
+├── Statistiche principali
+├── Analisi per anno
+├── Top contributori
+├── Insight e conclusioni
+└── Implicazioni per il progetto
+
+GUIDA_USO.md                  (3.2 KB)  - Guida rapida
+├── Istruzioni installazione
+└── Comandi per esecuzione
+
+STRUTTURA_PROGETTO.txt        (questo file) - Organizzazione progetto
+
+⚙️ CONFIGURAZIONE
+-----------------
+requirements.txt              (213 B)   - Dipendenze Python
+├── pandas>=2.0.0
+└── matplotlib>=3.7.0
+
+┌─────────────────────────────────────────────────────────────┐
+│                 RISULTATI PRINCIPALI                        │
+└─────────────────────────────────────────────────────────────┘
+
+✅ Commit totali analizzati:        33,567
+✅ Commit refactoring/stile:        2,115  (6.30%)
+✅ Commit normali:                  31,452 (93.70%)
+
+📊 INSIGHT CHIAVE
+-----------------
+• Circa 1 commit su 16 è dedicato al refactoring
+• Django dimostra impegno costante per la qualità
+• 15.2% degli autori contribuisce al refactoring
+• Parola più frequente: "typo" (1,326 occorrenze)
+• Top contributor: Adrian Holovaty (263 commit)
+
+📅 EVOLUZIONE TEMPORALE
+-----------------------
+Anni con più refactoring:
+1. 2008 - 205 commit
+2. 2007 - 178 commit
+3. 2013 - 166 commit
+4. 2014 - 164 commit
+5. 2010 - 155 commit
+
+┌─────────────────────────────────────────────────────────────┐
+│                  FLUSSO DI LAVORO                           │
+└─────────────────────────────────────────────────────────────┘
+
+1️⃣  ESTRAZIONE DATI
+    git log --pretty=format:"%H;%an;%ad;%s" > commits.csv
+
+2️⃣  INSTALLAZIONE DIPENDENZE
+    pip install -r requirements.txt
+
+3️⃣  ANALISI BASE
+    python3 analisi_commit.py
+    → Genera: grafico_commit.png, commit_refactoring.csv
+
+4️⃣  ANALISI AVANZATE
+    python3 analisi_avanzate.py
+    → Genera: 3 grafici aggiuntivi + statistiche console
+
+5️⃣  PRESENTAZIONE
+    Apri report_analisi.html nel browser
+    Consulta RIEPILOGO.md per i dati chiave
+
+┌─────────────────────────────────────────────────────────────┐
+│                 TECNOLOGIE UTILIZZATE                       │
+└─────────────────────────────────────────────────────────────┘
+
+🐍 Python 3.13          - Linguaggio principale
+📊 pandas 2.x           - Analisi e manipolazione dati
+📈 matplotlib 3.x       - Visualizzazione grafici
+🔧 Git                  - Estrazione dati repository
+🌐 HTML5/CSS3           - Report interattivo
+
+┌─────────────────────────────────────────────────────────────┐
+│                  CONTATTI E INFO                            │
+└─────────────────────────────────────────────────────────────┘
+
+Studente:       Marco Machera
+Corso:          Automated Software Delivery
+Università:     Università del Molise
+Docente:        Prof. Simone Scalabrino
+Data:           Ottobre 2025
+Repository:     Django (https://github.com/django/django)
+
+==============================================
+Fine della struttura del progetto
