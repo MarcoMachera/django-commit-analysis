@@ -1,0 +1,9 @@
+# Requirements per Analisi Commit Django
+# Automated Software Delivery - Università del Molise
+# Marco Machera
+
+# Analisi e manipolazione dati
+pandas>=2.0.0
+
+# Visualizzazione grafici
+matplotlib>=3.7.0
