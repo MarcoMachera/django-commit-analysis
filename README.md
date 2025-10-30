@@ -1,201 +1,248 @@
-# Analisi Commit Django - Automated Software Delivery
+# 📊 Analisi Commit Django - Refactoring e Stile
 
-**Università del Molise**  
-**Corso:** Automated Software Delivery  
-**Docente:** Prof. Simone Scalabrino  
-**Studente:** Marco Machera  
-**Data:** 30 ottobre 2025
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-success)](https://marcomachera.github.io/django-commit-analysis/)
+[![Python](https://img.shields.io/badge/Python-3.7+-blue.svg)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
----
-
-## 📋 Obiettivo del Progetto
-
-Questo progetto analizza la storia dei commit del repository Django (https://github.com/django/django) per rispondere alla seguente domanda di ricerca:
-
-> **"Quanti commit hanno migliorato lo stile del codice o hanno effettuato operazioni di refactoring?"**
+> Progetto universitario per il corso di **Automated Software Delivery**  
+> **Università del Molise** - Prof. Simone Scalabrino  
+> **Autore:** Marco Machera | **Anno:** 2025
 
 ---
 
-## 📊 Risultati dell'Analisi
+## 🎯 Domanda di Ricerca
 
-### Statistiche Principali
-
-- **Totale commit analizzati:** 33,567
-- **Commit di refactoring/stile:** 2,115 (6.30%)
-- **Commit normali:** 31,452 (93.70%)
-
-### Interpretazione
-
-I risultati mostrano che circa il **6.30%** dei commit nel repository Django sono dedicati a operazioni di refactoring o miglioramento dello stile del codice. Questo indica che:
-
-1. Django mantiene un focus costante sulla qualità del codice
-2. Circa 1 commit su 16 è dedicato al miglioramento della base di codice esistente
-3. Il team Django investe tempo significativo nella manutenzione e pulizia del codice
+> **"Quanti commit di Django hanno migliorato lo stile del codice o hanno effettuato operazioni di refactoring?"**
 
 ---
 
-## 🛠️ Metodologia
+## 📈 Risultati Principali
 
-### 1. Estrazione dei Commit
+| Metrica | Valore |
+|---------|--------|
+| **Commit Totali Analizzati** | 33,567 |
+| **Commit Refactoring/Stile** | 2,115 (6.30%) |
+| **Commit Normali** | 31,452 (93.70%) |
 
-I commit sono stati estratti dal repository Django utilizzando il comando Git:
+### 💡 Insight Chiave
 
-```bash
-git log --pretty=format:"%H;%an;%ad;%s" > commits.csv
-```
+- ✅ **Circa 1 commit su 16** è dedicato al refactoring o allo stile
+- ✅ **Django mantiene un forte impegno** per la qualità del codice
+- ✅ **Il refactoring è una pratica costante**, integrata nel processo di sviluppo
+- ✅ **Solo il 15.2% degli autori** contribuisce attivamente al refactoring
+- ✅ **Adrian Holovaty** è il top contributor con 263 commit di refactoring
 
-Questo comando produce un file CSV con le seguenti colonne:
-- **Hash:** Identificatore univoco del commit
-- **Autore:** Nome dell'autore del commit
-- **Data:** Data e ora del commit
-- **Messaggio:** Messaggio descrittivo del commit
+---
 
-### 2. Identificazione dei Commit di Refactoring
+## 🌐 Report Interattivo
 
-Lo script identifica i commit di refactoring cercando le seguenti parole chiave nel messaggio del commit:
+**[📊 Visualizza il Report Completo su GitHub Pages](https://marcomachera.github.io/django-commit-analysis/)**
 
-- `refactor`
-- `cleanup` / `clean up`
-- `reformat`
-- `style`
-- `pep8` / `pep 8`
-- `lint`
-- `typo`
-- `naming`
-- `readability`
-- `dead code`
-- `simplify`
-- `optimize`
-- `formatting`
-- `reorganize`
-- `restructure`
-- `cosmetic`
-- `whitespace`
-- `indentation`
-- `code style`
-- `code quality`
-- `improve code`
-
-La ricerca è **case-insensitive** e utilizza **word boundaries** per evitare falsi positivi.
-
-### 3. Analisi e Visualizzazione
-
-Lo script:
-1. Carica i commit dal file CSV
-2. Analizza ogni messaggio di commit
-3. Classifica i commit come "refactoring/stile" o "normali"
-4. Calcola statistiche aggregate
-5. Genera visualizzazioni grafiche (torta e barre)
-6. Salva i risultati in file di output
+Il report include:
+- 📊 Grafici interattivi (torta, barre, temporali)
+- 👥 Top 10 contributori al refactoring
+- 🔤 Analisi delle parole chiave più frequenti
+- 📅 Evoluzione temporale (2005-2025)
+- 📈 Statistiche comparative dettagliate
 
 ---
 
 ## 📁 Struttura del Progetto
 
 ```
-Automated Software delivery/
+django-commit-analysis/
+├── 📊 Dati
+│   ├── commits.csv                    # Dataset completo (33,567 commit)
+│   └── commit_refactoring.csv         # Commit identificati (2,115)
 │
-├── analisi_commit.py          # Script principale di analisi
-├── commits.csv                # Dati di input (commit estratti)
-├── grafico_commit.png         # Grafico generato (output)
-├── commit_refactoring.csv     # Commit di refactoring identificati (output)
-└── README.md                  # Questa documentazione
+├── 🐍 Script Python
+│   ├── analisi_commit.py              # ⭐ Script principale
+│   └── analisi_avanzate.py            # Analisi approfondite
+│
+├── 📈 Visualizzazioni
+│   ├── grafico_commit.png             # Grafici principali
+│   ├── analisi_temporale.png          # Evoluzione nel tempo
+│   ├── top_autori_refactoring.png     # Top contributori
+│   └── parole_chiave_frequenza.png    # Frequenza keywords
+│
+├── 🌐 Report Web
+│   ├── index.html                     # GitHub Pages (report principale)
+│   └── report_analisi.html            # Report completo
+│
+└── 📚 Documentazione
+    ├── README.md                      # Questo file
+    ├── GUIDA_USO.md                   # Istruzioni dettagliate
+    ├── RIEPILOGO.md                   # Sintesi risultati
+    └── STRUTTURA_PROGETTO.txt         # Organizzazione progetto
 ```
 
 ---
 
-## 🚀 Installazione e Utilizzo
+## 🚀 Quick Start
 
-### Prerequisiti
-
-- Python 3.7 o superiore
-- pip (gestore pacchetti Python)
-
-### Installazione Dipendenze
+### 1. Clona il Repository
 
 ```bash
-pip install pandas matplotlib
+git clone https://github.com/MarcoMachera/django-commit-analysis.git
+cd django-commit-analysis
 ```
 
-### Esecuzione dello Script
+### 2. Installa le Dipendenze
 
 ```bash
+pip install -r requirements.txt
+```
+
+### 3. Esegui l'Analisi
+
+```bash
+# Analisi base
 python3 analisi_commit.py
+
+# Analisi avanzate
+python3 analisi_avanzate.py
 ```
 
-### Output Generati
+### 4. Visualizza i Risultati
 
-1. **Output a console:** Statistiche dettagliate e esempi di commit
-2. **grafico_commit.png:** Visualizzazioni grafiche (torta e barre)
-3. **commit_refactoring.csv:** Lista completa dei commit identificati come refactoring
-
----
-
-## 📈 Visualizzazioni
-
-Il grafico generato include:
-
-1. **Grafico a torta:** Mostra la proporzione tra commit normali e di refactoring/stile
-2. **Grafico a barre:** Confronto visivo del numero di commit per categoria
+```bash
+# Apri il report nel browser
+open index.html
+```
 
 ---
 
-## 🔍 Esempi di Commit Identificati
+## 📊 Visualizzazioni
 
-Ecco alcuni esempi di commit classificati come refactoring/stile:
+### Distribuzione Commit
+![Distribuzione Commit](grafico_commit.png)
 
-1. **Hash:** 42d6e20feb  
-   **Messaggio:** "Made cosmetic edits to docs/releases/6.0.txt."
+### Analisi Temporale
+![Analisi Temporale](analisi_temporale.png)
 
-2. **Hash:** a545eb0c1a  
-   **Messaggio:** "Cautioned against multi-level relative imports in coding style docs."
+### Top Autori
+![Top Autori](top_autori_refactoring.png)
 
-3. **Hash:** 6c82b0bc91  
-   **Messaggio:** "Made cosmetic edits to 5.2.7 release notes."
-
-4. **Hash:** 7528979153  
-   **Messaggio:** "Added cleanup of cache clearing to DjangoFilePrefixesTests.setUp()."
+### Frequenza Parole Chiave
+![Parole Chiave](parole_chiave_frequenza.png)
 
 ---
 
-## 💡 Considerazioni Tecniche
+## 🛠️ Metodologia
 
-### Vantaggi dell'Approccio
+### 1. Estrazione Dati
+```bash
+cd django
+git log --pretty=format:"%H;%an;%ad;%s" > ../commits.csv
+```
 
-- **Automatizzato:** Analisi rapida di decine di migliaia di commit
-- **Riproducibile:** Lo script può essere eseguito su qualsiasi repository
-- **Estensibile:** Facile aggiungere nuove parole chiave o metriche
-- **Visuale:** Grafici chiari per presentazioni
+### 2. Identificazione Commit di Refactoring
 
-### Limitazioni
+Lo script identifica commit di refactoring cercando parole chiave come:
+- `refactor`, `cleanup`, `reformat`, `style`
+- `pep8`, `lint`, `typo`, `naming`
+- `readability`, `simplify`, `optimize`
+- `formatting`, `cosmetic`, `whitespace`
+- E altre 10+ parole chiave...
 
-- **Keyword-based:** L'analisi si basa solo sui messaggi dei commit
-- **Falsi positivi/negativi:** Alcuni commit potrebbero essere mal classificati
-- **Lingua:** Assume messaggi in inglese
-- **Contenuto:** Non analizza il contenuto effettivo del codice modificato
+### 3. Analisi e Visualizzazione
 
-### Possibili Miglioramenti Futuri
-
-1. Analisi del diff del codice (non solo il messaggio)
-2. Machine Learning per classificazione più accurata
-3. Analisi temporale (trend nel tempo)
-4. Analisi per autore o file
-5. Integrazione con tool di analisi statica del codice
-
----
-
-## 📚 Riferimenti
-
-- **Repository Django:** https://github.com/django/django
-- **Corso:** Automated Software Delivery - Università del Molise
-- **Documentazione Git:** https://git-scm.com/docs/git-log
+- **pandas** per l'analisi dei dati
+- **matplotlib** per le visualizzazioni
+- **HTML/CSS** per il report interattivo
 
 ---
 
-Il progetto fornisce insight quantitativi sulla qualità del processo di sviluppo di Django, uno dei framework web più popolari al mondo.
+## 📚 Documentazione Completa
+
+- **[GUIDA_USO.md](GUIDA_USO.md)** - Istruzioni dettagliate per l'uso
+- **[RIEPILOGO.md](RIEPILOGO.md)** - Sintesi completa dei risultati
+- **[STRUTTURA_PROGETTO.txt](STRUTTURA_PROGETTO.txt)** - Organizzazione del progetto
 
 ---
 
-**Marco Machera**  
-*Automated Software Delivery - Università del Molise*  
-*Ottobre 2025*
+## 🎓 Contesto Accademico
+
+Questo progetto è stato sviluppato per il corso di **Automated Software Delivery** presso l'**Università del Molise**, tenuto dal **Prof. Simone Scalabrino**.
+
+L'obiettivo è analizzare empiricamente la storia del repository [Django](https://github.com/django/django) per comprendere quanto impegno viene dedicato al refactoring e al miglioramento della qualità del codice.
+
+---
+
+## 🏆 Risultati Dettagliati
+
+### Top 10 Contributori al Refactoring
+
+| # | Autore | Commit |
+|---|--------|--------|
+| 🥇 | Adrian Holovaty | 263 |
+| 🥈 | Tim Graham | 198 |
+| 🥉 | Russell Keith-Magee | 150 |
+| 4 | Malcolm Tredinnick | 141 |
+| 5 | Mariusz Felisiak | 75 |
+| 6 | Aymeric Augustin | 66 |
+| 7 | Gary Wilson Jr | 62 |
+| 8 | Alex Gaynor | 56 |
+| 9 | Jannis Leidel | 48 |
+| 10 | James Bennett | 43 |
+
+### Parole Chiave Più Frequenti
+
+| Parola | Occorrenze |
+|--------|------------|
+| typo | 1,326 |
+| formatting | 196 |
+| style | 173 |
+| cleanup | 94 |
+| whitespace | 71 |
+
+### Evoluzione Temporale (Top 5 Anni)
+
+| Anno | Commit Refactoring |
+|------|--------------------|
+| 2008 | 205 |
+| 2007 | 178 |
+| 2013 | 166 |
+| 2014 | 164 |
+| 2010 | 155 |
+
+---
+
+## 💻 Tecnologie Utilizzate
+
+![Python](https://img.shields.io/badge/Python-3.13-blue?logo=python)
+![Pandas](https://img.shields.io/badge/Pandas-2.x-green?logo=pandas)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-3.x-orange?logo=matplotlib)
+![Git](https://img.shields.io/badge/Git-2.x-red?logo=git)
+
+---
+
+## 📄 Licenza
+
+Questo progetto è rilasciato sotto licenza MIT. Vedi il file [LICENSE](LICENSE) per i dettagli.
+
+---
+
+## 👤 Autore
+
+**Marco Machera**
+- 🎓 Università del Molise
+- 🐙 GitHub: [@MarcoMachera](https://github.com/MarcoMachera)
+
+---
+
+## � Ringraziamenti
+
+- **Prof. Simone Scalabrino** - Supervisione e guida del progetto
+- **Django Team** - Per il fantastico framework e la storia del repository
+- **Python Community** - Per gli strumenti di analisi dati
+
+---
+
+## �📊 Statistiche Repository
+
+![GitHub Stars](https://img.shields.io/github/stars/MarcoMachera/django-commit-analysis?style=social)
+![GitHub Forks](https://img.shields.io/github/forks/MarcoMachera/django-commit-analysis?style=social)
+![GitHub Watchers](https://img.shields.io/github/watchers/MarcoMachera/django-commit-analysis?style=social)
+
+---
