@@ -162,6 +162,30 @@
             margin-bottom: 10px;
         }
         
+        .github-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .github-button:hover {
+            background: #f8f9fa;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .github-button::before {
+            content: "⭐ ";
+            font-size: 1.2em;
+        }
+        
         @media (max-width: 768px) {
             .stats-grid {
                 grid-template-columns: 1fr;
@@ -175,11 +199,14 @@
 </head>
 <body>
     <div class="container">
-        <div class="header">
+                <div class="header">
             <h1>🎓 Analisi Commit Django</h1>
             <p>Automated Software Delivery - Università del Molise</p>
-            <p>Marco Machera</p>
+            <p>Prof. Simone Scalabrino | Marco Machera</p>
             <p>Ottobre 2025</p>
+            <a href="https://github.com/MarcoMachera/django-commit-analysis" target="_blank" class="github-button">
+                Visualizza su GitHub
+            </a>
         </div>
         
         <div class="content">
@@ -417,6 +444,19 @@
             <p>Automated Software Delivery - Università del Molise</p>
             <p>Prof. Simone Scalabrino</p>
             <p>Generato il 30/10/2025 alle 15:50</p>
+            <p style="margin-top: 15px;">
+                <a href="https://github.com/MarcoMachera/django-commit-analysis" 
+                   target="_blank" 
+                   style="color: #fff; text-decoration: none; opacity: 0.9;">
+                    🔗 Repository GitHub
+                </a>
+                 | 
+                <a href="https://github.com/django/django" 
+                   target="_blank" 
+                   style="color: #fff; text-decoration: none; opacity: 0.9;">
+                    📦 Django Repository
+                </a>
+            </p>
         </div>
     </div>
 </body>

@@ -44,3 +44,6 @@ django/
 
 # Generazione HTML report
 genera_report_html.py
+
+# Guida all'uso di GitHub
+GUIDA_GITHUB.md
